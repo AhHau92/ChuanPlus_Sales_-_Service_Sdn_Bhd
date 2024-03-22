@@ -55,30 +55,32 @@ window.onscroll = function() {
 
 
 
-
-   // 获取所有导航项的链接元素
-const navigationLinks = document.querySelectorAll('.navigationItem a');
-
-// 遍历每个链接元素
-navigationLinks.forEach(link => {
-    // 监听链接的点击事件
-    link.addEventListener('click', function(event) {
-        // 移除所有导航项上的 'active' 类
-        navigationLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-
-        // 将当前点击的链接添加 'active' 类
-        this.classList.add('active');
-    });
-
-    // 检查当前页面 URL 是否与导航项的 href 相匹配
-    if (window.location.href === link.href) {
-        // 如果匹配，添加 'active' 类
-        link.classList.add('active');
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  setActiveNavigationItem();
 });
 
+function setActiveNavigationItem() {
+  const navigationLinks = document.querySelectorAll('.navigationItem a');
 
+  // 遍历每个链接元素
+  navigationLinks.forEach(link => {
+      // 监听链接的点击事件
+      link.addEventListener('click', function(event) {
+          // 移除所有导航项上的 'active' 类
+          navigationLinks.forEach(link => {
+              link.classList.remove('active');
+          });
+
+          // 将当前点击的链接添加 'active' 类
+          this.classList.add('active');
+      });
+
+      // 检查当前页面 URL 是否与导航项的 href 相匹配
+      if (window.location.href === link.href) {
+          // 如果匹配，添加 'active' 类
+          link.classList.add('active');
+      }
+  });
+}
 
 
