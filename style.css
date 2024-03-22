@@ -484,12 +484,13 @@ nav{
         animation-duration: 0.5s !important;
     }
     .navigationItem > a {
-        padding: 10px 10px 10px 30px;
+        padding: 10px 10px 10px 10px;
         border-top: 1px solid #f5f5f5;
+        text-align: center;
     }
     .navigationItem a {
         color: #2559a4;
-        width: 300px;
+        /* width: 300px; */
     }
     .navigationList .navigationItem.dropDown .dropDownItem {
         position: unset;
